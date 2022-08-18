@@ -41,7 +41,7 @@ class Keenetic():
 
 
 if __name__ == '__main__':
-    access = Keenetic('http://192.169.1.1', 'admin', 'password')
+    access = Keenetic('http://192.168.1.1', 'admin', 'password')
     if access.authenticated:
         config_vpn = access.get(f'/rci/interface/Wireguard0')
         print(json.dumps(json.loads(config_vpn.text), indent=2))
