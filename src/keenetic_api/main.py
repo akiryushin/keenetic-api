@@ -1,6 +1,5 @@
 import requests
 from hashlib import md5, sha256
-import json
 
 
 class Keenetic():
@@ -39,9 +38,3 @@ class Keenetic():
     def delete(self, address):
         return self.__session.delete(f'{self.__host}{address}')
 
-
-if __name__ == '__main__':
-    access = Keenetic('http://192.168.1.1', 'admin', 'password')
-    if access.authenticated:
-        config_vpn = access.get(f'/rci/interface/Wireguard0')
-        print(json.dumps(json.loads(config_vpn.text), indent=2))
