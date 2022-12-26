@@ -32,9 +32,9 @@ class Keenetic():
     def get(self, address, data_to_get={}):
         return self.__session.get(f'{self.__host}{address}', params=data_to_get)
 
-    def post(self, address, data={}):
+    def post(self, address, data):
         return self.__session.post(f'{self.__host}{address}', json=data)
 
-    def delete(self, address):
-        return self.__session.delete(f'{self.__host}{address}')
+    def delete(self, address, data):
+        return self.__session.delete(f'{self.__host}{address}', json=data)
 
